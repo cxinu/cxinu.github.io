@@ -263,6 +263,6 @@ img.full-width-banner {
 /* Handling extremely small screens */
 @media (max-width: 480px) {
   html {
-    font-size: 16px; /* Slightly smaller base for very small phones */
+    font-size: 15px; /* Slightly smaller base for very small phones */
   }
 }
