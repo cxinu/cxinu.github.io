@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Managing Dotfiles with Bare Git</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">root</a>
+        <a href="/posts/">posts</a>
+        <a href="https://github.com/cxinu">github</a>
+      </nav>
+      <h1>Managing Dotfiles with Bare Git</h1>
+      <p class="post-date">Published: 2026-01-14</p>
+    </header>
+
+    <main>
+      <article><p>Standard symlinking tools like GNU Stow are bloated
+and unnecessary. By using a bare repository, we can track configuration
+files directly in <code>$HOME</code> without the mess.</p>
+<h2 id="setup">Setup</h2>
+<p>First, initialize the bare repository:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init <span class="at">--bare</span> <span class="va">$HOME</span>/.cfg</span></code></pre></div>
+<p>Then, define a local alias to interact with it:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> dots=<span class="st">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span></span></code></pre></div>
+<h2 id="why-this-is-superior">Why this is superior</h2>
+<ul>
+<li><strong>No Symlinks</strong>: Files live exactly where they belong
+in <code>~/.config</code>.</li>
+<li><strong>Minimalism</strong>: Relies only on Git—no external binaries
+or scripts required.</li>
+<li><strong>Portability</strong>: Cloning to a new machine is a
+single-step process.</li>
+</ul></article>
+    </main>
+
+    <footer>
+      <hr />
+      <p>Copyright © 2026 | cxinu@arch</p>
+    </footer>
+  </body>
+</html>
