@@ -13,6 +13,10 @@
 
 html {
   font-size: 18px;
+
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 body {
@@ -56,7 +60,6 @@ h2 {
 a {
   color: var(--accent);
   text-decoration: none;
-  background: linear-gradient(0deg, var(--secondary) 2px, transparent 2px);
   transition: all 0.2s ease-in-out;
 }
 
@@ -133,7 +136,7 @@ nav a:hover {
   color: var(--accent) !important;
 }
 
-/* Footer */
+/* Footer & hr */
 footer {
   margin-top: 6rem;
   padding-bottom: 4rem;
@@ -142,10 +145,9 @@ footer {
   text-align: center;
 }
 
-footer hr {
-  border: 0;
-  border-top: 1px solid var(--border);
-  margin-bottom: 2rem;
+hr {
+  border: 0.5px solid var(--border);
+  margin: 2rem 0;
 }
 
 /* Bullet Points */
@@ -234,7 +236,7 @@ img.full-width-banner {
 
   h1 {
     text-shadow: 1.5px 1.5px 0px var(--secondary); /* Subtle shadow reduction */
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
   }
 
   nav {
