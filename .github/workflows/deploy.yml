@@ -1,0 +1,32 @@
+name: deploy kino
+
+on:
+  push:
+    branches:
+      - kino
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        run: sudo apt-get install pandoc
+
+      - name: Make build script executable
+        run: chmod +x build.sh
+
+      - name: Execute Build Script
+        run: ./build.sh
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public
+          branch: gh-pages

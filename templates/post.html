@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$title$</title>
+    <style>
+      :root {
+        --bg: #171021;
+        --text-main: #f0f0f4;
+      }
+      html {
+        background-color: var(--bg);
+        color: var(--text-main);
+        visibility: hidden;
+        opacity: 0;
+      }
+    </style>
+    <link rel="preload" href="/style.css" as="style" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">root</a>
+        <a href="/posts/">posts</a>
+        <a href="https://github.com/cxinu">github</a>
+      </nav>
+      <h1>$title$</h1>
+      <p class="post-date">Published: $date$</p>
+    </header>
+
+    <main>
+      <article>$body$</article>
+    </main>
+
+    <footer>
+      <hr />
+      <p>Copyright © 2026 | cxinu@nyarch</p>
+    </footer>
+  </body>
+</html>

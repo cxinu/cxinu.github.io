@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap");
+
+:root {
+  /* Backgrounds - warm grey, not harsh purple/black */
+  --bg: #121212; /* Material Design dark - proven for readability */
+  --surface: #1e1e1e; /* Cards, tables, nav */
+  --code-bg: #1a1a1a; /* Code blocks - subtle lift from bg */
+
+  /* Text - amber/warm tones reduce blue light strain */
+  --text-main: #e0e0e0; /* 87% white - max readability without harshness */
+  --text-dim: #888888; /* 54% white - meets WCAG AA for secondary text */
+
+  /* Accents - amber/orange is easiest on eyes in dark mode */
+  --accent: #ffb74d; /* Soft amber - high visibility, low strain */
+  --secondary: #81c784; /* Muted green - complements amber */
+
+  /* Borders */
+  --border: #333333; /* Subtle 20% white */
+}
+
+html {
+  font-size: 18px;
+
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  line-height: 1.6; /* Increased line-height for airiness */
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; /* This now refers to the 18px base */
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  margin-top: 3rem;
+  color: var(--text-main);
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+  color: var(--accent);
+  text-shadow: 2px 2px 0px var(--secondary); /* Retro-modern offset */
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  border-left: 4px solid var(--secondary);
+  padding-left: 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--text-main);
+  background: linear-gradient(0deg, var(--accent) 2px, transparent 2px);
+}
+
+/* Technical Blocks - Fixed Borders & Font Size */
+pre.sourceCode {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  background-color: var(--code-bg);
+  -webkit-overflow-scrolling: touch;
+}
+
+div.sourceCode > pre > code {
+  background: transparent !important;
+  padding: 0 !important;
+  color: var(--text-main);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: inherit;
+}
+
+.kw {
+  color: var(--accent);
+  font-weight: bold;
+} /* Keywords */
+.st,
+.ch {
+  color: var(--secondary);
+} /* Strings/Chars */
+.dv,
+.bn,
+.fl {
+  color: var(--secondary);
+} /* Numbers */
+.co {
+  color: var(--text-dim);
+  font-style: italic;
+} /* Comments */
+.fu {
+  color: #fff;
+} /* Functions */
+
+/* Navigation */
+header {
+  margin-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+nav a {
+  background: none !important; /* Overriding the link gradient for nav */
+  color: var(--text-dim) !important;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border: none !important;
+}
+
+nav a:hover {
+  color: var(--accent) !important;
+}
+
+/* Footer & hr */
+footer {
+  margin-top: 6rem;
+  padding-bottom: 4rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+hr {
+  border: 0.5px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Bullet Points */
+ul {
+  padding-left: 0.5rem;
+}
+li {
+  list-style: none;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+li::before {
+  content: "◈";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+/* Tables */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  margin: 3rem 0;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+th {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  padding: 1rem;
+  background: var(--surface);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Styling for images rendered via Markdown */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem 0;
+
+  /* Matching your 'sourceCode' block style */
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+
+  /* Soft glow/shadow for the noir look */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+img.full-width-banner {
+  width: 150%;
+  height: auto;
+  display: block;
+  margin: 2rem 0;
+
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box; /* Removes any default padding from parent elements */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 2rem 1.25rem; /* Tighter padding for mobile */
+  }
+
+  h1 {
+    text-shadow: 1.5px 1.5px 0px var(--secondary); /* Subtle shadow reduction */
+    margin: 1.5rem 0;
+  }
+
+  nav {
+    gap: 2rem;
+    justify-content: center; /* Center nav on mobile */
+    margin-bottom: 0rem;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+
+  /* Reduce spacing for mobile flow */
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  footer {
+    margin-top: 4rem;
+  }
+}
+
+/* Handling extremely small screens */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px; /* Slightly smaller base for very small phones */
+  }
+}
