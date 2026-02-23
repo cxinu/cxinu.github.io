@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap");
 
 :root {
-  --bg: #171021;
-  --surface: #1a1421;
-  --text-main: #f0f0f4;
-  --text-dim: #92839a;
-  --accent: #29e8a0;
-  --secondary: #6c4f90;
-  --border: #2d2438;
-  --code-bg: #2d2438;
+  /* Backgrounds - warm grey, not harsh purple/black */
+  --bg: #121212; /* Material Design dark - proven for readability */
+  --surface: #1e1e1e; /* Cards, tables, nav */
+  --code-bg: #1a1a1a; /* Code blocks - subtle lift from bg */
+
+  /* Text - amber/warm tones reduce blue light strain */
+  --text-main: #e0e0e0; /* 87% white - max readability without harshness */
+  --text-dim: #888888; /* 54% white - meets WCAG AA for secondary text */
+
+  /* Accents - amber/orange is easiest on eyes in dark mode */
+  --accent: #ffb74d; /* Soft amber - high visibility, low strain */
+  --secondary: #81c784; /* Muted green - complements amber */
+
+  /* Borders */
+  --border: #333333; /* Subtle 20% white */
 }
 
 html {
