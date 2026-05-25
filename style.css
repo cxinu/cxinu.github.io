@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background-color: transparent;
   color: var(--text-main);
   font-family: "JetBrains Mono", "Fira Code", monospace;
   line-height: 1.6; /* Increased line-height for airiness */
