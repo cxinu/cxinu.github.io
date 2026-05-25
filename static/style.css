@@ -39,6 +39,17 @@ body {
   overflow-x: hidden;
 }
 
+#gol-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6; /* Adjust this to control the overall dimness */
+}
+
 /* Typography */
 h1,
 h2,
