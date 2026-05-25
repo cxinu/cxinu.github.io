@@ -9,6 +9,6 @@ Interested in low-level programming, GPU computing, and avoiding software brainr
 - **CudaCV** - Prototyping/playing around with Computer Vision Pipeline on GPU.
 - **Norse** - Implementation of Git-like VCS in Odin language.
 
-[github](https://github.com/cxinu) | [readme](/readme.html)
+[github](https://github.com/cxinu) | [resume](/resume.pdf)
 
 <img width="1280" height="410" src="/namber.jpg" alt="Reze Banner" class="full-width-banner">
