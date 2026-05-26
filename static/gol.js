@@ -17,8 +17,7 @@
     { name: "Day & Night", born: [3, 6, 7, 8], survive: [3, 4, 6, 7, 8] }, // Symmetrical patterns
     { name: "Maze", born: [3], survive: [1, 2, 3, 4, 5] }, // Sprawling labyrinth
   ];
-  // Start with a random rule that isn't Conway's (index 0)
-  let currentRuleIndex = Math.floor(Math.random() * (rules.length - 1)) + 1;
+  let currentRuleIndex = 2;
 
   function resize() {
     canvas.width = window.innerWidth;
@@ -67,24 +66,33 @@
         if (grid[i][j] === 1) {
           let drawX = i * cellSize + cellSize / 2;
           let drawY = mod(j * cellSize - offsetY, gridHeightPx) + cellSize / 2;
-          
-          ctx.fillRect(drawX - nodeSize/2, drawY - nodeSize/2, nodeSize, nodeSize);
-          
+
+          ctx.fillRect(
+            drawX - nodeSize / 2,
+            drawY - nodeSize / 2,
+            nodeSize,
+            nodeSize,
+          );
+
           // Connect to forward neighbors to avoid drawing lines twice
           const neighborsToCheck = [
-            [1, 0], [1, 1], [0, 1], [-1, 1]
+            [1, 0],
+            [1, 1],
+            [0, 1],
+            [-1, 1],
           ];
-          
+
           for (let check of neighborsToCheck) {
             let ni = i + check[0];
             let nj = j + check[1];
-            
+
             // Only draw visual connections for non-wrapping neighbors to keep it clean
             if (ni >= 0 && ni < cols && nj >= 0 && nj < rows) {
               if (grid[ni][nj] === 1) {
                 let nx = ni * cellSize + cellSize / 2;
-                let ny = mod(nj * cellSize - offsetY, gridHeightPx) + cellSize / 2;
-                
+                let ny =
+                  mod(nj * cellSize - offsetY, gridHeightPx) + cellSize / 2;
+
                 // Prevent drawing vertical lines that wrap across the whole screen
                 if (Math.abs(drawY - ny) <= cellSize * 2) {
                   ctx.moveTo(drawX, drawY);
