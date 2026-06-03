@@ -3,16 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Pro/g/ramming Challenges v4.0</title>
+    <style>
+      .easy { color: #2e7d32; font-weight: bold; }
+      .medium { color: #cf9c00; font-weight: bold; }
+      .difficult { color: #c62828; font-weight: bold; }
+      .fuck-you { color: #6a1b9a; font-weight: bold; }
+    </style>
   </head>
   <body>
     <h1>Pro/g/ramming Challenges, v4.0</h1>
 
     <p>
       <strong>Difficulty Legend:</strong>
-      <span style="color: #2e7d32; font-weight: bold">Easy</span> |
-      <span style="color: #cf9c00; font-weight: bold">Medium</span> |
-      <span style="color: #c62828; font-weight: bold">Difficult</span> |
-      <span style="color: #6a1b9a; font-weight: bold">Fuck You</span>
+      <span class="easy">Easy</span> |
+      <span class="medium">Medium</span> |
+      <span class="difficult">Difficult</span> |
+      <span class="fuck-you">Fuck You</span>
     </p>
 
     <hr />
@@ -31,569 +37,151 @@
 
     <h2>Challenges List</h2>
     <ul style="list-style: none; padding-left: 0">
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">1.</span> Download
-        Manager
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">2.</span> Make an
-        elastic producer/consumer task queue
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">3.</span> IRC Client
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">4.</span> Markov Chain
-        Sentence Generator (Include Shitposting Capabilities)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">5.</span> English
-        Sentence Parser that Points to the Context of a Sentence
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">6.</span> MIDI Player +
-        Editor
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">7.</span> Stock Market
-        Simulator Using Yahoo Spreadsheet Data
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">8.</span>
-        Parametric/Graphic Equalizer for .wav files (Make it real-time)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">9.</span> Graphing
-        Calculator (BONUS: Graph the Function's Derivatives)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">10.</span> To-Do List
-        Application (Web app or CLI)
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">11.</span> Verlet
-        Integration (Verlet Cloth)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">12.</span> TCP/UDP Chat
-        Server + Client
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">13.</span> Music
-        Streaming
-      </li>
-      <li><span style="color: #cf9c00; font-weight: bold">14.</span> Shazam</li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">15.</span> Chatbot (with
-        conversation retention)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">16.</span> Curses Text
-        Editor (with Emacs / Vim Keybindings)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">17.</span> Paint Clone
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">18.</span> Image to
-        ASCII Art
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">19.</span> Booru (Image
-        Board) Image Downloader
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">20.</span> Image
-        Converter
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">21.</span> ID3 Reader
-      </li>
-      <li>
-        <span style="color: #6a1b9a; font-weight: bold">22.</span> Sound
-        Synthesis (Sine, square, sawtooth, etc...) ("Fuck You" mode: Realtime
-        MIDI Playback with Custom Instruments)
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">23.</span> C++ IDE
-        Plugin for Sublime/Atom (Auto-Complete, Go-To Symbol Declaration and
-        Definition using Clang's AST)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">24.</span> Simple
-        Version Control supporting checkout, commit (with commit message),
-        unlocking, and per-file configuration of number of revisions kept
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">25.</span> Imageboard
-        (Imagine vichan)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">26.</span> Password
-        Manager
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">27.</span> Create a
-        Torrent Client (CLI or GUI)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">28.</span> Booru Client
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">29.</span> Key Press Bot
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">30.</span> IP/URL
-        Obscurification (http://www.pc-help.org/obscure.htm)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">31.</span> Radix Base
-        Converter (Given a radix base, convert it to decimal)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">32.</span> Chan
-        aggregator (Let's user view various boards from different 'chans')
-        (Bonus: Add 4ChanX and Archiving Functionality)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">33.</span> Encrypt a
-        File, and Upload it online
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">34.</span> Make a Text
-        Editor that autosaves and includes the date in the filename
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">35.</span> Create an HSV
-        Color Representation
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">36.</span> Window
-        Manager
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">37.</span> Basic
-        Relational Database Software (SQL Support, Handle Relationships, Focus
-        on Efficiency)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">38.</span> Pixel Editor
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">39.</span> Trivial File
-        Transfer Protocol (TFTP): Allow a client to put a file onto a remote
-        host
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">40.</span> Markdown
-        (HTML/XML) Editor
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">41.</span> IP Tracking
-        Visualization
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">42.</span> Port Scanner
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">43.</span> Old School
-        Demo Effect (Plasma, Tunnel, Scrollers, Zoomers, etc...)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">44.</span> Fizzbuzz
-        (BONUS: In Assembly)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">45.</span> RPN
-        Calculator
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">46.</span> Counts
-        occurrences of characters in a Given String (include support for unicode
-        characters)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">47.</span> Towers of
-        Hanoi
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">48.</span> Music
-        Visualizer
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">49.</span> Unicode
-        Converter (Support for UTF-8, 16LE, 32LE, and 32BE)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">50.</span> Calculate the
-        first (n) digits of pi
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">51.</span> Least Squares
-        Fitting Algorithm
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">52.</span> Given an
-        Array of Stocks's values over time, find the period of time where the
-        stocks could have made the most money
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">53.</span> Highest Prime
-        Factor Calculator
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">54.</span> Hide and
-        Extract Data in images (Basic Steganography) (Bonus: Include .gif
-        support)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">55.</span> Web Page
-        Crawler
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">56.</span> Password
-        Generator (Let User Choose Options)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">57.</span> Vignère
-        cipher encryption/decryption
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">58.</span> Game Of Life
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">59.</span> Caesar Cipher
-        Cracker
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">60.</span> Dijkstra's
-        Algorithm
-      </li>
-      <li><span style="color: #2e7d32; font-weight: bold">61.</span> ROT 13</li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">62.</span> Program that
-        displays MBR Contents
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">63.</span> Random Name
-        Picker
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">64.</span>
-        Encrypt/Decrypt Text : Implement at least one from
-        http://rumkin.com/tools/cipher/collection
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">65.</span> Youtube To
-        MP3
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">66.</span> Text to
-        Hexadecimal/Binary
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">67.</span> Calculate the
-        first 1,000 digits of pi iteratively
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">68.</span> Sierpinski
-        Triangle
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">69.</span> Mandlebrot
-        Set
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">70.</span> OpenAI Gym
-        Project
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">71.</span> AI for
-        Roguelikes
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">72.</span>
-        Sudoku/n-Puzzle Solver using A* algorithm
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">73.</span> Connect-4 AI
-        Player using Alpha-Beta Pruning
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">74.</span> Basic Neural
-        Network - Simulate individual neurons and their connections
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">75.</span> Real Neural
-        Network - Implement a basic feed-forward neural network using matrices
-        for entire layers along with matrix operations for computations
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">76.</span> Convolutional
-        Neural Network: Implement a convolutional N.N. for a handwritten digit
-        recognition, test on MNIST dataset (Use TensorFlow, Theano, etc...)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">77.</span> Convolutional
-        Neural Network: Implement your own convolutional neural network for
-        handwritten digit recognition, test on MNIST Dataset (Without
-        TensorFlow, Theano, etc...)
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">78.</span> Virtual
-        Machine with a Script that Writes "Hello, World"
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">79.</span> Basic
-        Bootloader (with extended file system)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">80.</span> Terminal
-        Shell (Executable Binaries, Pipe System, Redirection, and History)
-        (BONUS: Make it a GUI)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">81.</span> HTML +
-        JavaScript Debugger
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">82.</span> Write an
-        Interpreted LISP-like Programming Language
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">83.</span> Make an
-        application that is capable of mounting filesystems from other OSes
-        using the FUSE model
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">84.</span> Universal
-        Asynchronous Receiver/Transmitter (UART) Game (In assembly)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">85.</span> Pong Game as
-        a UEFI file in color (Hint:
-        http://www.rodsbooks.com/efi-programming/index.html)
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">86.</span> Design an
-        Esoteric Language
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">87.</span> C Compiler
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">88.</span> Turing
-        Machine Simulator
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">89.</span> Read,
-        Evaluate, Print Loop using a compiled language
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">90.</span> Static
-        Website Generator (Scriptable Templates + Content -> HTML and CSS)
-      </li>
-      <li>
-        <span style="color: #6a1b9a; font-weight: bold">91.</span> Chip - 8
-        Emulator (Hard Mode: Cached Interpreter, Fuck You: Dynamic Recompiler,
-        use dynarec/jit library)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">92.</span> Double
-        Pendulum Simulation
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">93.</span> Constructive
-        Solid Geometry
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">94.</span> Ray Tracer
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">95.</span> Real-Time
-        Fast Fourier Transform Spectrum Visualizer
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">96.</span> Generate a
-        Complimentary Color from any input color
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">97.</span> Generate a
-        5-Color Scheme from the most dominant tones in any image
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">98.</span> General
-        Lambert's-Problem Solver (At least it's not rocket science... Oh wait,
-        it actually is)
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">99.</span> TI-86
-        Emulator (Bonus: Include the Option to Create Programs)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">100.</span> N-Body
-        Simulator, with particles having a certain mass and radius depending on
-        the mass that merge if they collide (Bonus: Include a GUI where you can
-        place particles)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">101.</span> Eulerian
-        Path
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">102.</span> Draw a
-        spinning 3D Cube
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">103.</span> Cellular
-        Textures
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">104.</span> Knight's
-        Tour
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">105.</span> Monster
-        Raising/Breeding Simulator
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">106.</span> Tetris
-      </li>
-      <li><span style="color: #cf9c00; font-weight: bold">107.</span> Snake</li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">108.</span> Pipe Dreams
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">109.</span> Pac Man,
-        With Different Behaviors for each ghost
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">110.</span> Dragon Quest
-        / Basic RPG Engine
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">111.</span> Rock Paper
-        Scissors
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">112.</span> First-Person
-        Engine in OpenGL (Walking, Looking Around, Jumping on Obstacles) (BONUS:
-        VR Compatibility)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">113.</span> Shuffle a
-        Deck of Cards (Include a Visualization)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">114.</span> Simulate a
-        game of Tag using a multi-agent system
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">115.</span> Wolfenstein
-        Clone (FPS, two-dimensional map that appears to be 3-D) (If you need a
-        starting point, search for bisquit's video about DOOM-like Engines)
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">116.</span> Scorched
-        Earth Clone
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">117.</span> Minesweeper
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">118.</span> An
-        Audio/Visual 64KB Demonstration
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">119.</span> Sudoku
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">120.</span> Danmaku
-        (Bullet Hell) Engine
-      </li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">121.</span> Roguelike
-        Engine/Dungeon Generator
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">122.</span> Design a
-        Game Engine in Unity
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">123.</span> Yahtzee
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">124.</span> Oil Panic
-      </li>
-      <li><span style="color: #cf9c00; font-weight: bold">125.</span> Chess</li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">126.</span> Go (No AI
-        Necessary)
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">127.</span> Connect Four
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">128.</span> Mastermind
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">129.</span> Missile
-        Command Game
-      </li>
-      <li><span style="color: #cf9c00; font-weight: bold">130.</span> Tron</li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">131.</span> Breakout
-      </li>
-      <li><span style="color: #2e7d32; font-weight: bold">132.</span> Simon</li>
-      <li>
-        <span style="color: #c62828; font-weight: bold">133.</span> LISP
-        Interpreter
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">134.</span> Ulam Spiral
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">135.</span> Bellman-Ford
-        Simulation with at least Five Vertices
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">136.</span> Matrix
-        Arithmetic
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">137.</span> File
-        Compression Utility (Make it GUI)
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">138.</span> PDF Tagger
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">139.</span> Nonogram
-        Generator and Solver
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">140.</span> Calculate
-        Dot and Cross Product of Two Vectors
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">141.</span> Bismuth
-        Fractal
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">142.</span> Seam Carving
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">143.</span> Bayesian
-        Filter
-      </li>
-      <li>
-        <span style="color: #cf9c00; font-weight: bold">144.</span> WMS viewer
-        that isn't web based
-      </li>
-      <li>
-        <span style="color: #2e7d32; font-weight: bold">145.</span> ASCII
-        Digital Clock
-      </li>
+      <li><span class="medium">1.</span> Download Manager</li>
+      <li><span class="medium">2.</span> Make an elastic producer/consumer task queue</li>
+      <li><span class="medium">3.</span> IRC Client</li>
+      <li><span class="easy">4.</span> Markov Chain Sentence Generator (Include Shitposting Capabilities)</li>
+      <li><span class="medium">5.</span> English Sentence Parser that Points to the Context of a Sentence</li>
+      <li><span class="medium">6.</span> MIDI Player + Editor</li>
+      <li><span class="medium">7.</span> Stock Market Simulator Using Yahoo Spreadsheet Data</li>
+      <li><span class="difficult">8.</span> Parametric/Graphic Equalizer for .wav files (Make it real-time)</li>
+      <li><span class="medium">9.</span> Graphing Calculator (BONUS: Graph the Function's Derivatives)</li>
+      <li><span class="easy">10.</span> To-Do List Application (Web app or CLI)</li>
+      <li><span class="difficult">11.</span> Verlet Integration (Verlet Cloth)</li>
+      <li><span class="medium">12.</span> TCP/UDP Chat Server + Client</li>
+      <li><span class="difficult">13.</span> Music Streaming</li>
+      <li><span class="medium">14.</span> Shazam</li>
+      <li><span class="easy">15.</span> Chatbot (with conversation retention)</li>
+      <li><span class="medium">16.</span> Curses Text Editor (with Emacs / Vim Keybindings)</li>
+      <li><span class="medium">17.</span> Paint Clone</li>
+      <li><span class="easy">18.</span> Image to ASCII Art</li>
+      <li><span class="medium">19.</span> Booru (Image Board) Image Downloader</li>
+      <li><span class="medium">20.</span> Image Converter</li>
+      <li><span class="medium">21.</span> ID3 Reader</li>
+      <li><span class="difficult">22.</span> Sound Synthesis (Sine, square, sawtooth, etc...) ("Fuck You" mode: Realtime MIDI Playback with Custom Instruments)</li>
+      <li><span class="medium">23.</span> C++ IDE Plugin for Sublime/Atom (Auto-Complete, Go-To Symbol Declaration and Definition using Clang's AST)</li>
+      <li><span class="medium">24.</span> Simple Version Control supporting checkout, commit (with commit message), unlocking, and per-file configuration of number of revisions kept</li>
+      <li><span class="easy">25.</span> Imageboard (Imagine vichan)</li>
+      <li><span class="medium">26.</span> Password Manager</li>
+      <li><span class="difficult">27.</span> Create a Torrent Client (CLI or GUI)</li>
+      <li><span class="difficult">28.</span> Booru Client</li>
+      <li><span class="medium">29.</span> Key Press Bot</li>
+      <li><span class="medium">30.</span> IP/URL Obscurification (http://www.pc-help.org/obscure.htm)</li>
+      <li><span class="medium">31.</span> Radix Base Converter (Given a radix base, convert it to decimal)</li>
+      <li><span class="difficult">32.</span> Chan aggregator (Let's user view various boards from different 'chans') (Bonus: Add 4ChanX and Archiving Functionality)</li>
+      <li><span class="medium">33.</span> Encrypt a File, and Upload it online</li>
+      <li><span class="difficult">34.</span> Make a Text Editor that autosaves and includes the date in the filename</li>
+      <li><span class="easy">35.</span> Create an HSV Color Representation</li>
+      <li><span class="medium">36.</span> Window Manager</li>
+      <li><span class="fuck-you">37.</span> Basic Relational Database Software (SQL Support, Handle Relationships, Focus on Efficiency)</li>
+      <li><span class="medium">38.</span> Pixel Editor</li>
+      <li><span class="medium">39.</span> Trivial File Transfer Protocol (TFTP): Allow a client to put a file onto a remote host</li>
+      <li><span class="medium">40.</span> Markdown (HTML/XML) Editor</li>
+      <li><span class="medium">41.</span> IP Tracking Visualization</li>
+      <li><span class="easy">42.</span> Port Scanner</li>
+      <li><span class="easy">43.</span> Old School Demo Effect (Plasma, Tunnel, Scrollers, Zoomers, etc...)</li>
+      <li><span class="easy">44.</span> Fizzbuzz (BONUS: In Assembly)</li>
+      <li><span class="easy">45.</span> RPN Calculator</li>
+      <li><span class="easy">46.</span> Counts occurrences of characters in a Given String (include support for unicode characters)</li>
+      <li><span class="easy">47.</span> Towers of Hanoi</li>
+      <li><span class="medium">48.</span> Music Visualizer</li>
+      <li><span class="medium">49.</span> Unicode Converter (Support for UTF-8, 16LE, 32LE, and 32BE)</li>
+      <li><span class="easy">50.</span> Calculate the first (n) digits of pi</li>
+      <li><span class="medium">51.</span> Least Squares Fitting Algorithm</li>
+      <li><span class="easy">52.</span> Given an Array of Stocks's values over time, find the period of time where the stocks could have made the most money</li>
+      <li><span class="easy">53.</span> Highest Prime Factor Calculator</li>
+      <li><span class="medium">54.</span> Hide and Extract Data in images (Basic Steganography) (Bonus: Include .gif support)</li>
+      <li><span class="medium">55.</span> Web Page Crawler</li>
+      <li><span class="easy">56.</span> Password Generator (Let User Choose Options)</li>
+      <li><span class="medium">57.</span> Vignère cipher encryption/decryption</li>
+      <li><span class="medium">58.</span> Game Of Life</li>
+      <li><span class="easy">59.</span> Caesar Cipher Cracker</li>
+      <li><span class="medium">60.</span> Dijkstra's Algorithm</li>
+      <li><span class="easy">61.</span> ROT 13</li>
+      <li><span class="medium">62.</span> Program that displays MBR Contents</li>
+      <li><span class="medium">63.</span> Random Name Picker</li>
+      <li><span class="easy">64.</span> Encrypt/Decrypt Text : Implement at least one from http://rumkin.com/tools/cipher/collection</li>
+      <li><span class="easy">65.</span> Youtube To MP3</li>
+      <li><span class="easy">66.</span> Text to Hexadecimal/Binary</li>
+      <li><span class="medium">67.</span> Calculate the first 1,000 digits of pi iteratively</li>
+      <li><span class="easy">68.</span> Sierpinski Triangle</li>
+      <li><span class="medium">69.</span> Mandlebrot Set</li>
+      <li><span class="difficult">70.</span> OpenAI Gym Project</li>
+      <li><span class="medium">71.</span> AI for Roguelikes</li>
+      <li><span class="medium">72.</span> Sudoku/n-Puzzle Solver using A* algorithm</li>
+      <li><span class="medium">73.</span> Connect-4 AI Player using Alpha-Beta Pruning</li>
+      <li><span class="easy">74.</span> Basic Neural Network - Simulate individual neurons and their connections</li>
+      <li><span class="medium">75.</span> Real Neural Network - Implement a basic feed-forward neural network using matrices for entire layers along with matrix operations for computations</li>
+      <li><span class="medium">76.</span> Convolutional Neural Network: Implement a convolutional N.N. for a handwritten digit recognition, test on MNIST dataset (Use TensorFlow, Theano, etc...)</li>
+      <li><span class="difficult">77.</span> Convolutional Neural Network: Implement your own convolutional neural network for handwritten digit recognition, test on MNIST Dataset (Without TensorFlow, Theano, etc...)</li>
+      <li><span class="medium">78.</span> Virtual Machine with a Script that Writes "Hello, World"</li>
+      <li><span class="fuck-you">79.</span> Basic Bootloader (with extended file system)</li>
+      <li><span class="medium">80.</span> Terminal Shell (Executable Binaries, Pipe System, Redirection, and History) (BONUS: Make it a GUI)</li>
+      <li><span class="medium">81.</span> HTML + JavaScript Debugger</li>
+      <li><span class="medium">82.</span> Write an Interpreted LISP-like Programming Language</li>
+      <li><span class="difficult">83.</span> Make an application that is capable of mounting filesystems from other OSes using the FUSE model</li>
+      <li><span class="medium">84.</span> Universal Asynchronous Receiver/Transmitter (UART) Game (In assembly)</li>
+      <li><span class="difficult">85.</span> Pong Game as a UEFI file in color (Hint: http://www.rodsbooks.com/efi-programming/index.html)</li>
+      <li><span class="difficult">86.</span> Design an Esoteric Language</li>
+      <li><span class="difficult">87.</span> C Compiler</li>
+      <li><span class="difficult">88.</span> Turing Machine Simulator</li>
+      <li><span class="difficult">89.</span> Read, Evaluate, Print Loop using a compiled language</li>
+      <li><span class="medium">90.</span> Static Website Generator (Scriptable Templates + Content -> HTML and CSS)</li>
+      <li><span class="medium">91.</span> Chip - 8 Emulator (Hard Mode: Cached Interpreter, Fuck You: Dynamic Recompiler, use dynarec/jit library)</li>
+      <li><span class="medium">92.</span> Double Pendulum Simulation</li>
+      <li><span class="medium">93.</span> Constructive Solid Geometry</li>
+      <li><span class="difficult">94.</span> Ray Tracer</li>
+      <li><span class="difficult">95.</span> Real-Time Fast Fourier Transform Spectrum Visualizer</li>
+      <li><span class="easy">96.</span> Generate a Complimentary Color from any input color</li>
+      <li><span class="medium">97.</span> Generate a 5-Color Scheme from the most dominant tones in any image</li>
+      <li><span class="fuck-you">98.</span> General Lambert's-Problem Solver (At least it's not rocket science... Oh wait, it actually is)</li>
+      <li><span class="difficult">99.</span> TI-86 Emulator (Bonus: Include the Option to Create Programs)</li>
+      <li><span class="medium">100.</span> N-Body Simulator, with particles having a certain mass and radius depending on the mass that merge if they collide (Bonus: Include a GUI where you can place particles)</li>
+      <li><span class="easy">101.</span> Eulerian Path</li>
+      <li><span class="easy">102.</span> Draw a spinning 3D Cube</li>
+      <li><span class="easy">103.</span> Cellular Textures</li>
+      <li><span class="medium">104.</span> Knight's Tour</li>
+      <li><span class="difficult">105.</span> Monster Raising/Breeding Simulator</li>
+      <li><span class="medium">106.</span> Tetris</li>
+      <li><span class="easy">107.</span> Snake</li>
+      <li><span class="medium">108.</span> Pipe Dreams</li>
+      <li><span class="medium">109.</span> Pac Man, With Different Behaviors for each ghost</li>
+      <li><span class="difficult">110.</span> Dragon Quest / Basic RPG Engine</li>
+      <li><span class="easy">111.</span> Rock Paper Scissors</li>
+      <li><span class="difficult">112.</span> First-Person Engine in OpenGL (Walking, Looking Around, Jumping on Obstacles) (BONUS: VR Compatibility)</li>
+      <li><span class="medium">113.</span> Shuffle a Deck of Cards (Include a Visualization)</li>
+      <li><span class="medium">114.</span> Simulate a game of Tag using a multi-agent system</li>
+      <li><span class="difficult">115.</span> Wolfenstein Clone (FPS, two-dimensional map that appears to be 3-D) (If you need a starting point, search for bisquit's video about DOOM-like Engines)</li>
+      <li><span class="medium">116.</span> Scorched Earth Clone</li>
+      <li><span class="medium">117.</span> Minesweeper</li>
+      <li><span class="medium">118.</span> An Audio/Visual 64KB Demonstration</li>
+      <li><span class="medium">119.</span> Sudoku</li>
+      <li><span class="difficult">120.</span> Danmaku (Bullet Hell) Engine</li>
+      <li><span class="difficult">121.</span> Roguelike Engine/Dungeon Generator</li>
+      <li><span class="easy">122.</span> Design a Game Engine in Unity</li>
+      <li><span class="easy">123.</span> Yahtzee</li>
+      <li><span class="easy">124.</span> Oil Panic</li>
+      <li><span class="medium">125.</span> Chess</li>
+      <li><span class="difficult">126.</span> Go (No AI Necessary)</li>
+      <li><span class="easy">127.</span> Connect Four</li>
+      <li><span class="medium">128.</span> Mastermind</li>
+      <li><span class="medium">129.</span> Missile Command Game</li>
+      <li><span class="medium">130.</span> Tron</li>
+      <li><span class="medium">131.</span> Breakout</li>
+      <li><span class="easy">132.</span> Simon</li>
+      <li><span class="difficult">133.</span> LISP Interpreter</li>
+      <li><span class="easy">134.</span> Ulam Spiral</li>
+      <li><span class="medium">135.</span> Bellman-Ford Simulation with at least Five Vertices</li>
+      <li><span class="medium">136.</span> Matrix Arithmetic</li>
+      <li><span class="medium">137.</span> File Compression Utility (Make it GUI)</li>
+      <li><span class="easy">138.</span> PDF Tagger</li>
+      <li><span class="difficult">139.</span> Nonogram Generator and Solver</li>
+      <li><span class="medium">140.</span> Calculate Dot and Cross Product of Two Vectors</li>
+      <li><span class="medium">141.</span> Bismuth Fractal</li>
+      <li><span class="medium">142.</span> Seam Carving</li>
+      <li><span class="medium">143.</span> Bayesian Filter</li>
+      <li><span class="difficult">144.</span> WMS viewer that isn't web based</li>
+      <li><span class="easy">145.</span> ASCII Digital Clock</li>
     </ul>
 
     <hr />
@@ -665,9 +253,7 @@
       <li>Skiena: <em>The Algorithm Design Manual</em></li>
       <li>Cormen et al: <em>Introduction to Algorithms</em></li>
       <li>Russell: <em>Artificial Intelligence: A Modern Approach</em></li>
-      <li>
-        Abelson: <em>Structure and Interpretation of Computer Programs</em>
-      </li>
+      <li>Abelson: <em>Structure and Interpretation of Computer Programs</em></li>
     </ul>
 
     <p>
@@ -682,11 +268,7 @@
       <li><a href="https://www.rosettacode.org">www.rosettacode.org</a></li>
       <li><a href="https://www.codesabbey.com">www.codesabbey.com</a></li>
       <li><a href="https://www.codingbat.com">www.codingbat.com</a></li>
-      <li>
-        <a href="https://www.programmingpraxis.com"
-          >www.programmingpraxis.com</a
-        >
-      </li>
+      <li><a href="https://www.programmingpraxis.com">www.programmingpraxis.com</a></li>
     </ul>
   </body>
 </html>
