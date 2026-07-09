@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>cxinu</title>
     <style>
       :root {
-        --bg: #171021;
-        --text-main: #f0f0f4;
+        --bg: #1a1a1a;
+        --text-main: #d4c5b0;
       }
       html {
         background-color: var(--bg);
@@ -20,31 +20,28 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <canvas id="gol-bg"></canvas>
-    <header>
-      <nav>
+
+        <header class="hero" style="--hero-img: url('/hk-lake.png')">
+                <nav>
         <a href="/">root</a>
         <a href="/posts/">posts</a>
         <a href="https://github.com/cxinu">github</a>
       </nav>
-      <h1></h1>
-    </header>
+      <h1>cxinu</h1>
+            <p class="tagline">Interested in systems programming, GPU computing, and avoiding software brainrot.</p>
+          </header>
 
     <main>
-      <h1 id="about">About</h1>
-<p>Interested in low-level programming, GPU computing, and avoiding
-software brainrot.</p>
-<hr />
+            <p><a href="https://github.com/cxinu">github</a> | <a
+href="/resume.pdf">resume</a></p>
 <h2 id="projects">Projects</h2>
 <ul>
-<li><strong>CudaCV</strong> - Prototyping/playing around with Computer
-Vision Pipeline on GPU.</li>
-<li><strong>Norse</strong> - Implementation of Git-like VCS in Odin
-language.</li>
-</ul>
-<p><a href="https://github.com/cxinu">github</a> | <a
-href="/resume.pdf">resume</a></p>
-<img width="1280" height="410" src="/namber.jpg" alt="Reze Banner" class="full-width-banner">       <section id="recent-posts">
+<li><a
+href="https://github.com/cxinu/CudaCV"><strong>CudaCV</strong></a> -
+Prototyping/playing around with Computer Vision Pipeline on GPU.</li>
+<li><a href="https://github.com/cxinu/norse"><strong>norse</strong></a>
+- Implementation of Git-like VCS in Odin language.</li>
+</ul>       <section id="recent-posts">
         <h2>Recent Posts</h2>
         <ul class='post-list'><li><span class='date'>2026-05-16</span> <a href='/posts/high GPA fallacy.html'>The high GPA fallacy</a></li><li><span class='date'>2026-01-13</span> <a href='/posts/src_compilation.html'>Computer Science Resource Index (/src/)</a></li></ul>
       </section>
@@ -52,13 +49,12 @@ href="/resume.pdf">resume</a></p>
 
     <footer>
       <hr />
-      <p><b>webring</b></p>
       <nav class="webring-nav">
-        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=prev">← previous site</a>
-        <a href="https://ring.seggs.lol/random">random site</a>
-        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=next">next site →</a>
+        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=prev"><- prev site</a>
+        <a href="https://ring.seggs.lol/random" class="webring-label">[WEBRING]</a>
+        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=next">next site -></a>
       </nav>
-      <p>Copyright © 2026 | cxinu@nyarch</p>
+      <p>Copyright © 2026 | cxinu@github</p>
     </footer>
     <script src="/gol.js"></script>
   </body>

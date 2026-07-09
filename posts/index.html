@@ -6,8 +6,8 @@
     <title>Archive</title>
     <style>
       :root {
-        --bg: #171021;
-        --text-main: #f0f0f4;
+        --bg: #1a1a1a;
+        --text-main: #d4c5b0;
       }
       html {
         background-color: var(--bg);
@@ -20,32 +20,34 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <canvas id="gol-bg"></canvas>
-    <header>
-      <nav>
+
+        <header>
+                
+      <canvas id="gol-bg" aria-hidden="true"></canvas>
+      
+            <nav>
         <a href="/">root</a>
         <a href="/posts/">posts</a>
         <a href="https://github.com/cxinu">github</a>
       </nav>
       <h1>Archive</h1>
-    </header>
+          </header>
 
     <main>
-             <section id="recent-posts">
-        <h2>Recent Posts</h2>
+                   <section id="recent-posts">
+        <h2>All Posts</h2>
         <ul class='post-list'><li><span class='date'>2026-05-16</span> <a href='/posts/high GPA fallacy.html'>The high GPA fallacy</a></li><li><span class='date'>2026-01-13</span> <a href='/posts/src_compilation.html'>Computer Science Resource Index (/src/)</a></li></ul>
       </section>
           </main>
 
     <footer>
       <hr />
-      <p><b>webring</b></p>
       <nav class="webring-nav">
-        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=prev">← previous site</a>
-        <a href="https://ring.seggs.lol/random">random site</a>
-        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=next">next site →</a>
+        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=prev"><- prev site</a>
+        <a href="https://ring.seggs.lol/random" class="webring-label">[WEBRING]</a>
+        <a href="https://ring.seggs.lol/redirect?from=cxinu&dir=next">next site -></a>
       </nav>
-      <p>Copyright © 2026 | cxinu@nyarch</p>
+      <p>Copyright © 2026 | cxinu@github</p>
     </footer>
     <script src="/gol.js"></script>
   </body>
