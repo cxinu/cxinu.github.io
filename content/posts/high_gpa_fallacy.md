@@ -1,6 +1,7 @@
 ---
 title: "The high GPA fallacy"
 date: 2026-05-16
+banner: "/maki.png"
 ---
 
 having and maintaining a very high GPA, is indeed hard-work. If an individual decides to invest their time in CGPA maxxing what's their incentive?

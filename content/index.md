@@ -1,14 +1,14 @@
-# About
-
-Interested in low-level programming, GPU computing, and avoiding software brainrot.
-
 ---
-
-## Projects
-
-- **CudaCV** - Prototyping/playing around with Computer Vision Pipeline on GPU.
-- **Norse** - Implementation of Git-like VCS in Odin language.
+title: "cxinu"
+banner: "/hk-lake.png"
+banner-alt: "Banner"
+tagline: "Interested in systems programming, GPU computing, and avoiding software brainrot."
+---
 
 [github](https://github.com/cxinu) | [resume](/resume.pdf)
 
-<img width="1280" height="410" src="/namber.jpg" alt="Reze Banner" class="full-width-banner">
+## Projects
+
+- [**CudaCV**](https://github.com/cxinu/CudaCV) - Prototyping/playing around with Computer Vision Pipeline on GPU.
+- [**norse**](https://github.com/cxinu/norse) - Implementation of Git-like VCS in Odin language.
+

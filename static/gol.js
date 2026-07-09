@@ -1,5 +1,6 @@
 (function () {
   const canvas = document.getElementById("gol-bg");
+  if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
   const cellSize = 16; // Grid resolution
@@ -7,21 +8,73 @@
   const interval = 1000 / fps;
 
   let cols, rows, grid;
+  let reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", (e) => {
+    reducedMotion = e.matches;
+  });
+
   let lastTime = 0;
-  let scrollY = 0;
-  const parallaxSpeed = 0.3; // Speed of parallax effect
 
   const rules = [
-    { name: "Conway's Life", born: [3], survive: [2, 3] },
-    { name: "HighLife", born: [3, 6], survive: [2, 3] }, // Replicators
-    { name: "Day & Night", born: [3, 6, 7, 8], survive: [3, 4, 6, 7, 8] }, // Symmetrical patterns
-    { name: "Maze", born: [3], survive: [1, 2, 3, 4, 5] }, // Sprawling labyrinth
+      { name: "Day & Night", born: [3, 6, 7, 8], survive: [3, 4, 6, 7, 8] }, // Symmetrical patterns
+    // { name: "Conway's Life", born: [3], survive: [2, 3] },
+    // { name: "HighLife", born: [3, 6], survive: [2, 3] }, // Replicators
   ];
-  let currentRuleIndex = 2;
+  let currentRuleIndex = 0;
+
+  const perm = new Uint8Array(512);
+  (function () {
+    const p = new Uint8Array(256);
+    for (let i = 0; i < 256; i++) p[i] = i;
+    for (let i = 255; i > 0; i--) {
+      const j = (Math.random() * (i + 1)) | 0;
+      [p[i], p[j]] = [p[j], p[i]];
+    }
+    for (let i = 0; i < 512; i++) perm[i] = p[i & 255];
+  })();
+
+  function fade(t) {
+    return t * t * t * (t * (t * 6 - 15) + 10);
+  }
+
+  function lerp(a, b, t) {
+    return a + t * (b - a);
+  }
+
+  function grad(hash, x, y) {
+    const h = hash & 3;
+    const u = h < 2 ? x : y;
+    const v = h < 2 ? y : x;
+    return ((h & 1) === 0 ? u : -u) + ((h & 2) === 0 ? v : -v);
+  }
+
+  function noise(x, y) {
+    const xi = Math.floor(x) & 255;
+    const yi = Math.floor(y) & 255;
+    const xf = x - Math.floor(x);
+    const yf = y - Math.floor(y);
+    const u = fade(xf);
+    const v = fade(yf);
+
+    const a = perm[xi] + yi;
+    const b = perm[xi + 1] + yi;
+
+    return lerp(
+      lerp(grad(perm[a], xf, yf), grad(perm[b], xf - 1, yf), u),
+      lerp(grad(perm[a + 1], xf, yf - 1), grad(perm[b + 1], xf - 1, yf - 1), u),
+      v,
+    );
+  }
+
+  const noiseScale = 0.04;
+  const noiseThreshold = 0.15;
 
   function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const parent = canvas.parentElement;
+    const parentRect = parent.getBoundingClientRect();
+    canvas.width = parentRect.width;
+    canvas.height = parentRect.height;
     cols = Math.floor(canvas.width / cellSize);
     rows = Math.floor(canvas.height / cellSize);
     initGrid();
@@ -35,7 +88,7 @@
     grid = createGrid();
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {
-        grid[i][j] = Math.random() > 0.85 ? 1 : 0;
+        grid[i][j] = noise(i * noiseScale, j * noiseScale) > noiseThreshold ? 1 : 0;
       }
     }
   }
@@ -46,26 +99,20 @@
   }
 
   function draw() {
-    // Fade out previous frames to create ghost trails
-    // rgba(18, 18, 18) matches your --bg color #121212
-    ctx.fillStyle = "rgba(18, 18, 18, 0.2)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const offsetY = scrollY * parallaxSpeed;
-    const gridHeightPx = rows * cellSize;
-
-    ctx.strokeStyle = "#2a2a2a"; // Subtle line color
+    ctx.strokeStyle = "#3a3a3a";
     ctx.lineWidth = 1;
     ctx.beginPath();
 
-    ctx.fillStyle = "#1e1e1e"; // var(--surface) for nodes
-    const nodeSize = 3;
+    ctx.fillStyle = "#252525";
+    const nodeSize = 4;
 
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {
         if (grid[i][j] === 1) {
           let drawX = i * cellSize + cellSize / 2;
-          let drawY = mod(j * cellSize - offsetY, gridHeightPx) + cellSize / 2;
+          let drawY = j * cellSize + cellSize / 2;
 
           ctx.fillRect(
             drawX - nodeSize / 2,
@@ -90,8 +137,7 @@
             if (ni >= 0 && ni < cols && nj >= 0 && nj < rows) {
               if (grid[ni][nj] === 1) {
                 let nx = ni * cellSize + cellSize / 2;
-                let ny =
-                  mod(nj * cellSize - offsetY, gridHeightPx) + cellSize / 2;
+                let ny = nj * cellSize + cellSize / 2;
 
                 // Prevent drawing vertical lines that wrap across the whole screen
                 if (Math.abs(drawY - ny) <= cellSize * 2) {
@@ -142,6 +188,11 @@
   }
 
   function loop(timestamp) {
+    if (reducedMotion) {
+      draw();
+      requestAnimationFrame(loop);
+      return;
+    }
     if (timestamp - lastTime >= interval) {
       update();
       draw();
@@ -152,20 +203,15 @@
 
   window.addEventListener("resize", resize);
 
-  window.addEventListener("scroll", () => {
-    scrollY = window.scrollY;
-    draw(); // Redraw immediately on scroll for smooth parallax
-  });
-
   window.addEventListener("click", (e) => {
-    // Map screen coordinates back to grid coordinates considering parallax
-    const offsetY = scrollY * parallaxSpeed;
-    const gridHeightPx = rows * cellSize;
-
-    // We want to find j such that mod(j * cellSize - offsetY, gridHeightPx) roughly equals e.clientY
-    // So j * cellSize = e.clientY + offsetY
-    let col = mod(Math.floor(e.clientX / cellSize), cols);
-    let row = mod(Math.floor((e.clientY + offsetY) / cellSize), rows);
+    const rect = canvas.getBoundingClientRect();
+    if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) return;
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
+    let col = mod(Math.floor(x / cellSize), cols);
+    let row = mod(Math.floor(y / cellSize), rows);
 
     // Create a random explosion of cells around the click
     const radius = 4;
