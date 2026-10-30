@@ -74,13 +74,20 @@ html,body{height:100%;margin:0;background:var(--plum);color:var(--ink);font-fami
 #panel.show{display:block}
 #game.pn #stage,#game.pn #scoot{visibility:hidden}
 @media (prefers-reduced-motion:no-preference){#panel.show{animation:slam .25s}@keyframes slam{from{transform:scale(1.25) rotate(2deg);opacity:0}}}
+#trees{display:none}
+#game #sky{height:62%}
+#csky{position:absolute;left:0;top:0;width:100%;height:62%}
+#game #board{left:32%;right:5%;top:5%;height:20%}
+#game[data-sc=lot] #ground{border-top:6px solid #e9c46a}
+#game[data-sc=lot] #ground::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,transparent 0 80px,#fff5 80px 84px)}
+@media (prefers-reduced-motion:no-preference){#panel.go .ride{animation:ride 1.4s ease-in forwards}@keyframes ride{to{transform:translateX(440px)}}}
 </style>
 </head>
 <body>
 <div id="game" data-sc="lot">
   <div id="hud"><small>Sass Meter</small><div id="bar"><div id="fill"></div></div></div>
-  <div id="lotdeco"><svg id="sky" viewBox="0 0 560 120" preserveAspectRatio="none"><path d="M0 120V70h50V40h60v50h40V55h70v-20h50v60h60V50h80v30h50V30h60v90z" fill="#3b1c4a"/></svg><div id="trees">🌳🌳</div><div id="parked">🛵🛵🛵</div><div id="cctv">📹</div></div>
-  <div id="classdeco"><div id="board">Test day. Silence.</div></div>
+  <div id="lotdeco"><svg id="sky" viewBox="0 0 560 380" preserveAspectRatio="xMidYMax slice"><defs><pattern id="wn" width="26" height="30" patternUnits="userSpaceOnUse"><rect x="6" y="8" width="12" height="14" fill="#ffd98a"/></pattern></defs><circle cx="440" cy="270" r="110" fill="#fff" opacity=".12"/><circle cx="440" cy="270" r="68" fill="#ffd34d"/><path d="M40 70q30-26 64-8q26-14 54 8zM360 40q24-20 50-6q22-10 44 6z" fill="#fff" opacity=".3"/><path d="M0 380V300h46v-52h54v52h34v-90h58v90h330v80z" fill="#3b1c4a"/><rect x="90" y="236" width="270" height="144" fill="#4d2561"/><rect x="90" y="236" width="270" height="144" fill="url(#wn)"/><path d="M80 236h290v-12H80z" fill="#2e1a3a"/><path d="M200 380v-50q25-30 50 0v50z" fill="#2e1a3a"/><path d="M225 224V176" stroke="#2e1a3a" stroke-width="4"/><path d="M225 178h34l-8 9 8 9h-34z" fill="#ff4fa3"/><rect y="350" width="560" height="30" fill="#2e1a3a"/><path d="M0 350h560" stroke="#6b3d7a" stroke-width="4"/><rect x="500" y="300" width="10" height="52" fill="#1f1228"/><circle cx="505" cy="288" r="36" fill="#2f5d50"/><circle cx="480" cy="305" r="24" fill="#2f5d50"/><circle cx="532" cy="305" r="24" fill="#2f5d50"/></svg><div id="trees">🌳🌳</div><div id="parked">🛵🛵🛵</div><div id="cctv">📹</div></div>
+  <div id="classdeco"><svg id="csky" viewBox="0 0 560 380" preserveAspectRatio="xMidYMin slice"><rect width="560" height="380" fill="#cfe5dc"/><rect y="300" width="560" height="80" fill="#9bc0b5"/><path d="M0 300h560" stroke="#7aa397" stroke-width="6"/><rect x="24" y="40" width="150" height="160" fill="#9ad7ff" stroke="#8a5a34" stroke-width="8"/><circle cx="120" cy="90" r="22" fill="#ffe27a"/><path d="M50 150q20-22 44-6q20-14 40 6z" fill="#fff"/><path d="M99 40v160M24 120h150" stroke="#8a5a34" stroke-width="6"/><path d="M24 200h150l70 100H-10z" fill="#fff" opacity=".22"/><circle cx="300" cy="40" r="20" fill="#fff" stroke="#555" stroke-width="4"/><path d="M300 40v-12M300 40l9 5" stroke="#555" stroke-width="3"/><g transform="rotate(-4 85 247)"><rect x="30" y="215" width="110" height="64" fill="#fffbe8" stroke="#555" stroke-width="3"/><text x="85" y="243" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b" font-family="DM Sans,sans-serif">NO CHEATING</text><text x="85" y="262" text-anchor="middle" font-size="10" fill="#555" font-family="DM Sans,sans-serif">(lol)</text></g></svg><div id="board">Test day. Silence.</div></div>
   <div id="ground"></div>
   <div id="stage">
     <div id="npcs"><i>🙂</i><i>🙂</i><i>🙂</i><i>🙂</i><i>🙂</i></div>
@@ -181,6 +188,31 @@ const PANELS={
 <path d="M476 150Q506 190 476 236M462 232l14 8 8-16" fill="none"/><path d="M24 250q-20-20 10-30q10-25 40-10q30-5 30 25q-10 25-45 20q-20 8-35-5z" fill="#ddd"/></g>
 <text x="20" y="140" font-size="50" fill="#3fd0c9" ${F} transform="rotate(-4 20 140)">VROOOM!</text>`)
 };
+const SP=(x,y,s=1)=>`<path transform="translate(${x} ${y}) scale(${s})" d="M0-14L4-4L14 0L4 4L0 14L-4 4L-14 0L-4-4z" fill="#fff" stroke="#111" stroke-width="2"/>`;
+const FT='font-family="Bungee,Impact,sans-serif" text-anchor="middle" fill="#111"';
+PANELS.rev=()=>P(`<path d="${rays(260,180,56,50,500)}" stroke="#aaa" stroke-width="2"/><g ${S}>
+<circle cx="80" cy="72" r="46" fill="#fff"/><path d="${rays(80,72,9,34,42)}" stroke-width="3"/><path d="M80 72L112 46" stroke="#ff4fa3" stroke-width="6"/><circle cx="80" cy="72" r="6" fill="#111"/>
+<path d="M300 66Q380 20 460 66Q380 100 300 66z" fill="#fff"/><circle cx="382" cy="62" r="20" fill="#3fd0c9"/><circle cx="382" cy="62" r="8" fill="#111"/><circle cx="374" cy="54" r="5" fill="#fff" stroke="none"/><path d="M290 34L470 54" stroke-width="10"/>
+<rect x="150" y="205" width="320" height="28" rx="14" fill="#888"/><path d="M300 262L420 212L474 250L350 300z" fill="#3fd0c9"/><path d="M392 186Q444 176 454 212Q444 246 396 238z" fill="#ffe3cc"/><path d="M404 198l32 4M402 212l36 4M402 226l32 4M476 184Q506 220 476 266M462 262l14 8 8-16" fill="none" stroke-width="3"/>
+<circle cx="60" cy="290" r="70" fill="#222"/><circle cx="60" cy="290" r="30" fill="#ddd"/>
+<path d="M118 192L100 130" stroke-width="26"/><path d="M118 192L100 130" stroke="#2b2b3a" stroke-width="18"/><path d="M96 192l56-6q18 8 10 26l-66 2q-10-12 0-22z" fill="#fff"/><path d="M190 150q20 20 10 50M206 142q26 26 14 64M190 120q8 10 0 16q-8-6 0-16z" fill="none" stroke-width="3"/></g>
+<text x="120" y="158" font-size="46" fill="#3fd0c9" ${F} transform="rotate(-4 120 158)">VROOOM!</text><text x="230" y="270" font-size="26" fill="#ff4fa3" ${F}>WAH!?</text>`);
+PANELS.exitA=()=>P(`<rect width="520" height="300" fill="#ff4fa3"/><rect width="520" height="300" fill="url(#ht)" opacity=".25"/><path d="${rays(170,160,50,100,420)}" stroke="#fff" stroke-width="3"/><g ${S}>
+<path d="M70 120Q60 20 170 40Q280 20 270 120Q230 70 170 80Q110 70 70 120zM90 60l-30-30 50 20M250 60l30-30-50 20" fill="#111"/><circle cx="170" cy="165" r="92" fill="#ffe3cc"/><path d="M82 120Q100 60 170 66Q240 60 258 120Q220 90 170 94Q120 90 82 120z" fill="#111"/>
+<path d="M104 124L148 142M236 124L192 142" stroke-width="12"/><ellipse cx="128" cy="152" rx="20" ry="13" fill="#fff"/><ellipse cx="212" cy="152" rx="20" ry="13" fill="#fff"/><circle cx="132" cy="152" r="6" fill="#111"/><circle cx="208" cy="152" r="6" fill="#111"/>
+<path d="M120 196Q170 176 220 196Q214 244 170 246Q126 244 120 196z" fill="#7a1030"/><path d="M130 198h80v14h-80z" fill="#fff" stroke-width="3"/><path d="M232 80q16-4 18 12M236 66q22-6 24 18" fill="none" stroke="#c0143c" stroke-width="6"/>
+<path d="M290 150L262 196L330 172z" fill="#fff"/><ellipse cx="390" cy="112" rx="122" ry="72" fill="#fff"/></g>
+<text x="390" y="108" font-size="34" ${FT}>NIKAL,</text><text x="390" y="144" font-size="21" ${FT}>BHEN KI LODI!</text><text x="420" y="270" font-size="40" fill="#fff" ${F}>GRAAH!</text>`);
+PANELS.exitM=()=>P(`<path d="${rays(150,165,44,100,420)}" stroke="#9fe8e3" stroke-width="3"/><circle cx="150" cy="165" r="130" fill="#3fd0c9" opacity=".3"/><circle cx="150" cy="165" r="104" fill="#ff4fa3" opacity=".25"/><g ${S}>
+<path d="M58 150Q40 30 150 34Q262 30 244 150L262 300H38z" fill="#111"/><circle cx="150" cy="165" r="84" fill="#ffe3cc"/><path d="M70 140Q84 66 150 70Q216 66 230 140Q196 100 150 104Q104 100 70 140z" fill="#111"/>
+<rect x="88" y="138" width="52" height="28" rx="10" fill="#111"/><rect x="160" y="138" width="52" height="28" rx="10" fill="#111"/><path d="M140 148h20M96 144l16 4M168 144l16 4" fill="none" stroke="#fff" stroke-width="3"/><path d="M84 124Q110 108 138 126M164 114Q190 100 218 118" fill="none" stroke-width="7"/><path d="M112 206Q150 226 196 196" fill="none"/>
+<ellipse cx="385" cy="100" rx="125" ry="76" fill="#fff"/><path d="M290 150L262 190L326 168z" fill="#fff"/></g>
+<text x="385" y="80" font-size="20" ${FT}>THIS SHOWS YOUR</text><text x="385" y="110" font-size="22" ${FT}>STANDARDS</text><text x="385" y="142" font-size="26" fill="#ff4fa3" ${F}>BTW! 💅✨</text>${SP(300,40,1.6)}${SP(470,210,2)}${SP(40,40,1.2)}${SP(250,250,1)}${SP(430,260,1.2)}`);
+PANELS.exitR=()=>P(`<rect width="520" height="300" fill="#ff6b6b"/><rect width="520" height="110" fill="#5b2a6e"/><circle cx="260" cy="190" r="84" fill="#ffd34d"/><path d="${rays(260,190,40,90,500)}" stroke="#fff" stroke-width="2" opacity=".6"/><rect y="232" width="520" height="68" fill="#2e2233"/><path d="M0 262h520" stroke="#fff6" stroke-width="4" stroke-dasharray="30 24"/>
+<g fill="#111" stroke="#111" stroke-width="2"><circle cx="36" cy="228" r="9"/><rect x="28" y="236" width="16" height="34"/><circle cx="66" cy="232" r="8"/><rect x="59" y="239" width="14" height="30"/><circle cx="92" cy="232" r="8"/><rect x="85" y="239" width="14" height="30"/></g><text x="36" y="206" font-size="26" fill="#fff" ${F}>...</text>
+<g class="ride" ${S}><path d="M20 180h150M60 196h120M0 214h110" stroke="#fff" stroke-width="4" opacity=".8"/><circle cx="215" cy="240" r="24" fill="#222"/><circle cx="320" cy="240" r="24" fill="#222"/><circle cx="215" cy="240" r="9" fill="#ddd"/><circle cx="320" cy="240" r="9" fill="#ddd"/><path d="M195 240Q200 200 235 190H290L325 210L338 240z" fill="#3fd0c9"/><path d="M244 190L262 142H292L286 190z" fill="#ff4fa3"/><path d="M286 152L322 174" stroke-width="10"/><path d="M312 206L326 168h14" fill="none"/><path d="M256 112Q214 100 190 144Q226 134 258 134z" fill="#111"/><circle cx="270" cy="124" r="17" fill="#ffe3cc"/><path d="M256 116Q266 100 284 112L270 116z" fill="#111"/><path d="M266 124h22" stroke-width="6"/>${SP(180,210,1)}${SP(150,170,.8)}</g>
+<text x="260" y="60" font-size="36" fill="#ffd34d" text-anchor="middle" ${F}>SWISH~</text>`);
+const ART=t=>t[0]=="I"?`<svg viewBox="0 0 360 300" style="width:100%;max-width:360px;max-height:40vh;border:4px solid #111;border-radius:6px"><rect width="360" height="300" fill="#ff6b6b"/><rect width="360" height="100" fill="#5b2a6e"/><path d="${rays(180,170,32,80,320)}" stroke="#ffe27a" stroke-width="3" opacity=".6"/><circle cx="180" cy="170" r="64" fill="#ffd34d"/><rect y="222" width="360" height="78" fill="#2e2233"/><g stroke="#111" stroke-width="3" stroke-linejoin="round"><circle cx="150" cy="226" r="15" fill="#222"/><circle cx="222" cy="226" r="15" fill="#222"/><path d="M135 226Q140 200 165 196H205L228 208L238 226z" fill="#3fd0c9"/><path d="M168 196L180 160H202L200 196z" fill="#ff4fa3"/><path d="M180 144Q158 138 144 160Q166 156 182 156z" fill="#111"/><circle cx="190" cy="148" r="11" fill="#ffe3cc"/><path d="M186 148h14" stroke-width="4"/></g><path d="M10 190h100M20 205h80M0 175h70" stroke="#fff" stroke-width="3" opacity=".8"/><g fill="#111"><circle cx="40" cy="236" r="7"/><rect x="34" y="243" width="12" height="22"/><circle cx="62" cy="238" r="6"/><rect x="57" y="244" width="10" height="20"/><circle cx="80" cy="238" r="6"/><rect x="75" y="244" width="10" height="20"/></g><text x="150" y="122" font-size="22">✨</text><text x="262" y="168" font-size="22">✨</text><text x="300" y="130" font-size="18">💅</text><text x="180" y="54" text-anchor="middle" font-size="38" fill="#ffd34d" ${F}>AURA +9999</text><text x="180" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" style="paint-order:stroke;stroke:#2a1033;stroke-width:5px">bhen ki lodi ❌  aura farmed ✅</text></svg>`:`<div style="font-size:80px">${t[0]=="D"?"😐":"💀"}</div>`;
 function showPanel(n){const p=$("panel");$("game").classList.toggle("pn",!!n);if(!n){p.className="";return}p.innerHTML=PANELS[n]();p.className="show"}
 function runIntro(){
   if(i>=intro.length){i=0;showPanel();$("hud").style.display="block";runDuel(0);return}
@@ -226,11 +258,11 @@ function finale(){
   $("hud").style.display="none";
   if(sass>=60){
     $("af").textContent="😡";$("mf").textContent="💅";
-    say("A","Nikal, bhen ki lodi.","",()=>{
+    showPanel("exitA");say("A","Nikal, bhen ki lodi.","",()=>{showPanel("exitM");
       $("af").textContent="🤬";
-      say("M","This shows your standards BTW! 💅✨","",()=>{
+      say("M","This shows your standards BTW! 💅✨","",()=>{showPanel("exitR");
         say("","Maitree kicks the stand up, revs the scooty, and rides out. Gang: speechless.","",()=>{
-          $("scoot").style.transform="translateX(110vw)";$("mf").textContent="😌";
+          $("panel").classList.add("go");$("scoot").style.transform="translateX(110vw)";$("mf").textContent="😌";
           setTimeout(()=>end("ICONIC EXIT 💅✨","Sass Meter: "+sass+"/100. Maitree left. Archi is still processing."),1500);
         });
       });
@@ -248,7 +280,7 @@ function finale(){
 
 function end(title,sub){
   const s=$("screen");s.style.display="flex";
-  s.innerHTML='<h1 class="title" style="font-size:34px">'+title+'</h1><p>'+sub+'</p><button class="btn" id="again">Play again</button>';
+  showPanel();s.innerHTML=ART(title)+'<h1 class="title" style="font-size:34px">'+title+'</h1><p>'+sub+'</p><button class="btn" id="again">Play again</button>';
   $("again").onclick=reset;
 }
 function reset(){
